@@ -179,19 +179,5 @@ namespace DungILModWrapper
                 }
             }
         }
-
-        private void IlApi()
-        {
-            var newClassType = InjAssembly.MainModule.GetType("DungILModWrapper.InjectMethods");
-            var newMethod = newClassType.Methods.Single(x => x.Name == "InitializeApi");
-            var importedMethod = TargAssembly.MainModule.ImportReference(newMethod);
-
-            var originalClassType = TargAssembly.MainModule.GetType("TitleUIManager");
-            var originalMethod = originalClassType.Methods.Single(x => x.Name == "Awake");
-
-            var il = originalMethod.Body.GetILProcessor();
-            var fi = il.Body.Instructions.First();
-            il.InsertBefore(fi, il.Create(OpCodes.Call, importedMethod));
-        }
     }
 }
