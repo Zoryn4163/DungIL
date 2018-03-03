@@ -11,8 +11,13 @@ namespace DungILModLoader
 
         public static void Initialize(string logFilePath)
         {
+            if (File.Exists(logFilePath))
+                File.Delete(logFilePath);
+
+
             LogPath = logFilePath;
-            LogStream = new StreamWriter(LogPath, false, Encoding.UTF8);
+            //LogStream = new StreamWriter(LogPath, false, Encoding.UTF8);
+            LogStream = File.CreateText(logFilePath);
             LogStream.AutoFlush = true;
         }
 
