@@ -14,21 +14,9 @@ namespace DungILModWrapper
     {
         public AssemblyDefinition InjAssembly = null;
         public AssemblyDefinition TargAssembly = null;
-        
-        public string test()
-        {
-            return "test";
-        }
-
-        public string test2()
-        {
-            return test();
-        }
 
         public void ProcessIlHooks()
         {
-            test();
-            test2();
             Console.WriteLine("Performing IL Weaving!");
             PublicizeTypes();
 
@@ -204,15 +192,6 @@ namespace DungILModWrapper
             var il = originalMethod.Body.GetILProcessor();
             var fi = il.Body.Instructions.First();
             il.InsertBefore(fi, il.Create(OpCodes.Call, importedMethod));
-        }
-    }
-
-    public static class InjectMethods
-    {
-        public static string InitializeApi()
-        {
-            DungILModLoader.ModLoader.Initialize();
-            return "hi";
         }
     }
 }

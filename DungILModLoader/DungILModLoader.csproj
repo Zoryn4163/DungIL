@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Log.cs" />
     <Compile Include="ModBase.cs" />
+    <Compile Include="ModCallbacks.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModManifest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

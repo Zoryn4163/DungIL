@@ -15,17 +15,9 @@ namespace DungILModLoader
 
         public static readonly string ExeDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         public static readonly string ModDir = Path.Combine(ExeDir, "mods");
-        public static int ModsLoaded { get; private set; }
-        public static ModBase[] Mods { get; private set; }
-        public static List<ModBase> ModsToRemove { get; private set; }
-
-        //public static DXGame DxGame { get; private set; }
-
-        public static void TestReeeeeeeeeeee()
-        {
-            string p = @"E:\test\" + Path.GetTempFileName().Split('\\').Last();
-            Directory.CreateDirectory(p);
-        }
+        public static int ModsLoaded { get; internal set; }
+        public static ModBase[] Mods { get; internal set; }
+        public static List<ModBase> ModsToRemove { get; internal set; }
 
         public static void Initialize()
         {
@@ -35,15 +27,8 @@ namespace DungILModLoader
             Log.Out("DungILModLoader Initialized");
             Log.Out("Executing in: " + ExeDir);
 
-            //ZXGame.IsSteam = false;
-
-            //ZXGame.Current.Entities
-
-            
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
-
-            //throw new Exception();
 
             Log.Out("Checking for mods in: " + ModDir);
 
@@ -57,20 +42,6 @@ namespace DungILModLoader
 
             if (ModsLoaded == 0)
                 return;
-
-            Log.Out("Calling mod Init functions...");
-            foreach (var mod in Mods)
-            {
-                try
-                {
-                    Log.Out("Init for: " + mod.Manifest.InternalName);
-                    mod.Init();
-                }
-                catch (Exception ex)
-                {
-                    Log.Out($"[{mod.Manifest.InternalName}] encountered an error in its OnGameLoaded function." + ex);
-                }
-            }
         }
 
         private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
@@ -84,84 +55,6 @@ namespace DungILModLoader
             Log.Out($"Sender of type [{sender.GetType()}]: {sender.ToString()}");
             Log.Out($"ExceptionObject of type [{e.ExceptionObject.GetType()}]: {e.ExceptionObject}");
             Log.Out($"Error is terminating: {e.IsTerminating}");
-        }
-
-        public static void OnGameLoaded()
-        {
-            Log.Out("Calling mod OnGameLoaded functions...");
-            foreach (var mod in Mods)
-            {
-                try
-                {
-                    Log.Out("OnGameLoaded for: " + mod.Manifest.InternalName);
-                    //mod.OnGameLoaded();
-                }
-                catch (Exception ex)
-                {
-                    Log.Out($"[{mod.Manifest.InternalName}] encountered an error in its OnGameLoaded function." + ex);
-                }
-            }
-        }
-
-        public static void OnScreenUpdate()
-        {
-            DoUpdate("screen");
-        }
-
-        public static void OnGameUpdate()
-        {
-            DoUpdate("game");
-        }
-
-        public static void OnLevelUpdate()
-        {
-            DoUpdate("level");
-        }
-
-        private static void DoUpdate(string m)
-        {
-            if (Mods == null)
-                Mods = new ModBase[0];
-
-            if (ModsToRemove == null)
-                ModsToRemove = new List<ModBase>();
-
-            if (ModsToRemove.Any())
-            {
-                List<ModBase> mods = Mods.ToList();
-                foreach (var mod in ModsToRemove)
-                {
-                    if (mods.Remove(mod))
-                    {
-                        Log.Out($"Removed [{mod.Manifest.InternalName}] from the update pool.");
-                    }
-                }
-                Mods = mods.ToArray();
-            }
-
-            foreach (var mod in Mods)
-            {
-                try
-                {
-                    switch (m)
-                    {
-                        case "screen":
-                            //mod.OnScreenUpdate();
-                            break;
-                        case "game":
-                            //mod.OnGameUpdate();
-                            break;
-                        case "level":
-                            //mod.OnLevelUpdate();
-                            break;
-                    }
-                }
-                catch (Exception ex )
-                {
-                    Log.Out($"[{mod.Manifest.InternalName}] encountered an error in its Update function." + ex);
-                    ModsToRemove.Add(mod);
-                }
-            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

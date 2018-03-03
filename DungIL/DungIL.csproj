@@ -66,6 +66,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DungILModLoader\DungILModLoader.csproj">
+      <Project>{96b6d7ee-e58e-4f09-a533-c6a89ff01a7b}</Project>
+      <Name>DungILModLoader</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\DungILModWrapper\DungILModWrapper.csproj">
       <Project>{893f38b3-89c2-47e6-884d-78b44fb28ba8}</Project>
       <Name>DungILModWrapper</Name>

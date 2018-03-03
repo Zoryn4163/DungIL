@@ -9,6 +9,8 @@ namespace DungILModWrapper
     {
         public bool Enabled { get; set; }
 
+        public string FriendlyName { get; set; }
+
         public string OriginalModuleFullType { get; set; }
         public string OriginalModuleMethodName { get; set; }
 
@@ -27,6 +29,7 @@ namespace DungILModWrapper
         public InjectData()
         {
             Enabled = false;
+            FriendlyName = "";
             OriginalModuleFullType = "";
             OriginalModuleMethodName = "";
             NewModuleFullType = "";

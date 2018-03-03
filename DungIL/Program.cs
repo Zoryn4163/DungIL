@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Threading;
+using DungILModLoader;
 using Mono.Cecil;
 using DungILModWrapper;
 
@@ -10,7 +11,6 @@ namespace DungIL
 {
     public static class Program
     {
-        //public static readonly string AssemblyFolder = @"D:\#Network-Steam\SteamRepo\steamapps\common\They Are Billions";
         public static string AssemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         public static readonly string AssemblyName = @"Assembly-CSharp.dll";
         public static readonly string BackupAssemblyName = @"Assembly-CSharp.bak.dll";
@@ -29,17 +29,6 @@ namespace DungIL
             var assemblyInfo = new FileInfo(AssemblyPath);
             var backupInfo = new FileInfo(BackupAssemblyPath);
             var cacheInfo = new FileInfo(CacheAssemblyPath);
-
-            if (false)
-            {
-                var ld = Path.Combine(AssemblyFolder, "TheyAreBillions.bak.exe");
-                var ver = GetAssemblyInfo(ld);
-                var ver2 = Assembly.LoadFrom(ld);
-                Console.WriteLine(ver);
-                Console.WriteLine(ver2);
-                Console.ReadKey();
-                Environment.Exit(0);
-            }
 
             if (cacheInfo.Exists)
             {
@@ -190,15 +179,13 @@ namespace DungIL
             Console.WriteLine("Reading cached assembly for injection...");
             var inj = new Inject();
             inj.TargAssembly = AssemblyDefinition.ReadAssembly(cacheInfo.FullName);
-            inj.InjAssembly = AssemblyDefinition.ReadAssembly(typeof(Inject).Assembly.Location);
+            inj.InjAssembly = AssemblyDefinition.ReadAssembly(typeof(ModCallbacks).Assembly.Location);
 
             Console.WriteLine("Processing injections...");
             inj.ProcessIlHooks();
 
             Console.WriteLine("Appending references...");
             inj.TargAssembly.MainModule.AssemblyReferences.Add(AssemblyNameReference.Parse(inj.InjAssembly.FullName));
-            //inj.TargAssembly.MainModule.AssemblyReferences.Add(AssemblyNameReference.Parse(AssemblyDefinition.ReadAssembly(Path.Combine(AssemblyFolder, "System.Data.dll")).FullName));
-            //inj.TargAssembly.MainModule.AssemblyReferences.Add(AssemblyNameReference.Parse(AssemblyDefinition.ReadAssembly(Path.Combine(AssemblyFolder, "Newtonsoft.Json.dll")).FullName));
 
             Console.WriteLine("Rewriting assembly definition to modified definition...");
             inj.TargAssembly.Name.Name = inj.TargAssembly.Name.Name + "_DungIL";
@@ -299,7 +286,6 @@ namespace DungIL
             {
                 Console.WriteLine(ex);
                 return new AssemblyInfo();
-                // throw new InvalidOperationException(ex);
             }
         }
     }
