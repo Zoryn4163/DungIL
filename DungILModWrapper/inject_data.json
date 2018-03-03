@@ -1,0 +1,72 @@
+[
+  {
+    "Enabled": true,
+    "OriginalModuleFullType": "TitleUIManager",
+    "OriginalModuleMethodName": "Awake",
+    "NewModuleFullType": "DungILModWrapper.InjectMethods",
+    "NewModuleMethodName": "InitializeApi",
+    "PlaceBeforeFirstInstruction": true,
+    "PlaceBeforeLastInstruction": false,
+    "PlaceBeforeAbsoluteInstruction": false,
+    "AbsoluteIntructionIndex": 0,
+    "MethodCausesReturn": true,
+    "MethodOverridesReturnValue": false,
+    "MethodReturnValueIgnoresTypeConstraint": false
+  },
+  {
+    "Enabled": false,
+    "OriginalModuleFullType": "DungILTestMod.TestMod",
+    "OriginalModuleMethodName": "test",
+    "NewModuleFullType": "DungILModWrapper.InjectMethods",
+    "NewModuleMethodName": "InitializeApi",
+    "PlaceBeforeFirstInstruction": true,
+    "PlaceBeforeLastInstruction": false,
+    "PlaceBeforeAbsoluteInstruction": false,
+    "AbsoluteIntructionIndex": 0,
+    "MethodCausesReturn": true,
+    "MethodOverridesReturnValue": true,
+    "MethodReturnValueIgnoresTypeConstraint": false
+  },
+  {
+    "Enabled": false,
+    "OriginalModuleFullType": "",
+    "OriginalModuleMethodName": "",
+    "NewModuleFullType": "",
+    "NewModuleMethodName": "",
+    "PlaceBeforeFirstInstruction": false,
+    "PlaceBeforeLastInstruction": false,
+    "PlaceBeforeAbsoluteInstruction": false,
+    "AbsoluteIntructionIndex": 0,
+    "MethodCausesReturn": false,
+    "MethodOverridesReturnValue": false,
+    "MethodReturnValueIgnoresTypeConstraint": false
+  },
+  {
+    "Enabled": false,
+    "OriginalModuleFullType": "",
+    "OriginalModuleMethodName": "",
+    "NewModuleFullType": "",
+    "NewModuleMethodName": "",
+    "PlaceBeforeFirstInstruction": false,
+    "PlaceBeforeLastInstruction": false,
+    "PlaceBeforeAbsoluteInstruction": false,
+    "AbsoluteIntructionIndex": 0,
+    "MethodCausesReturn": false,
+    "MethodOverridesReturnValue": false,
+    "MethodReturnValueIgnoresTypeConstraint": false
+  },
+  {
+    "Enabled": false,
+    "OriginalModuleFullType": "",
+    "OriginalModuleMethodName": "",
+    "NewModuleFullType": "",
+    "NewModuleMethodName": "",
+    "PlaceBeforeFirstInstruction": false,
+    "PlaceBeforeLastInstruction": false,
+    "PlaceBeforeAbsoluteInstruction": false,
+    "AbsoluteIntructionIndex": 0,
+    "MethodCausesReturn": false,
+    "MethodOverridesReturnValue": false,
+    "MethodReturnValueIgnoresTypeConstraint": false
+  }
+]
