@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungIL", "DungIL\DungIL.csproj", "{3A064F80-8CBB-4AF2-A867-54618DD79990}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungILModWrapper", "DungILModWrapper\DungILModWrapper.csproj", "{893F38B3-89C2-47E6-884D-78B44FB28BA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungILModLoader", "DungILModLoader\DungILModLoader.csproj", "{96B6D7EE-E58E-4F09-A533-C6A89FF01A7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungILTestMod", "DungILTestMod\DungILTestMod.csproj", "{4DBFC803-3D08-4D03-AB49-125D8C8E2190}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtonsoft.Json", "Newtonsoft.Json\Newtonsoft.Json.csproj", "{955B96F2-6AFB-4C2F-AAA5-9BFD6DDCB3BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ReleaseLite|Any CPU = ReleaseLite|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A064F80-8CBB-4AF2-A867-54618DD79990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A064F80-8CBB-4AF2-A867-54618DD79990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A064F80-8CBB-4AF2-A867-54618DD79990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A064F80-8CBB-4AF2-A867-54618DD79990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A064F80-8CBB-4AF2-A867-54618DD79990}.ReleaseLite|Any CPU.ActiveCfg = Release|Any CPU
+		{3A064F80-8CBB-4AF2-A867-54618DD79990}.ReleaseLite|Any CPU.Build.0 = Release|Any CPU
+		{893F38B3-89C2-47E6-884D-78B44FB28BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893F38B3-89C2-47E6-884D-78B44FB28BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893F38B3-89C2-47E6-884D-78B44FB28BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893F38B3-89C2-47E6-884D-78B44FB28BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893F38B3-89C2-47E6-884D-78B44FB28BA8}.ReleaseLite|Any CPU.ActiveCfg = Release|Any CPU
+		{893F38B3-89C2-47E6-884D-78B44FB28BA8}.ReleaseLite|Any CPU.Build.0 = Release|Any CPU
+		{96B6D7EE-E58E-4F09-A533-C6A89FF01A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B6D7EE-E58E-4F09-A533-C6A89FF01A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B6D7EE-E58E-4F09-A533-C6A89FF01A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B6D7EE-E58E-4F09-A533-C6A89FF01A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B6D7EE-E58E-4F09-A533-C6A89FF01A7B}.ReleaseLite|Any CPU.ActiveCfg = Release|Any CPU
+		{96B6D7EE-E58E-4F09-A533-C6A89FF01A7B}.ReleaseLite|Any CPU.Build.0 = Release|Any CPU
+		{4DBFC803-3D08-4D03-AB49-125D8C8E2190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBFC803-3D08-4D03-AB49-125D8C8E2190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBFC803-3D08-4D03-AB49-125D8C8E2190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBFC803-3D08-4D03-AB49-125D8C8E2190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DBFC803-3D08-4D03-AB49-125D8C8E2190}.ReleaseLite|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBFC803-3D08-4D03-AB49-125D8C8E2190}.ReleaseLite|Any CPU.Build.0 = Release|Any CPU
+		{955B96F2-6AFB-4C2F-AAA5-9BFD6DDCB3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955B96F2-6AFB-4C2F-AAA5-9BFD6DDCB3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955B96F2-6AFB-4C2F-AAA5-9BFD6DDCB3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955B96F2-6AFB-4C2F-AAA5-9BFD6DDCB3BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955B96F2-6AFB-4C2F-AAA5-9BFD6DDCB3BD}.ReleaseLite|Any CPU.ActiveCfg = ReleaseLite|Any CPU
+		{955B96F2-6AFB-4C2F-AAA5-9BFD6DDCB3BD}.ReleaseLite|Any CPU.Build.0 = ReleaseLite|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EAE3223-E8AE-40E8-BDE9-2307F23DC5CC}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://zoryn.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DungIL\\DungIL.csproj
+		SccProjectName1 = DungIL
+		SccLocalPath1 = DungIL
+		SccProjectUniqueName2 = DungILModWrapper\\DungILModWrapper.csproj
+		SccProjectName2 = DungILModWrapper
+		SccLocalPath2 = DungILModWrapper
+		SccProjectUniqueName3 = DungILModLoader\\DungILModLoader.csproj
+		SccProjectName3 = DungILModLoader
+		SccLocalPath3 = DungILModLoader
+		SccProjectUniqueName4 = DungILTestMod\\DungILTestMod.csproj
+		SccProjectName4 = DungILTestMod
+		SccLocalPath4 = DungILTestMod
+		SccProjectUniqueName5 = Newtonsoft.Json\\Newtonsoft.Json.csproj
+		SccProjectName5 = Newtonsoft.Json
+		SccLocalPath5 = Newtonsoft.Json
+	EndGlobalSection
+EndGlobal

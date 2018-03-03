@@ -1,0 +1,7 @@
+﻿{
+	"Name": "DungIL Test Mod",
+	"InternalName": "DungIL_Test_Mod",
+	"Version": "1.0",
+	"Authour": "Zoryn",
+	"Assembly": "DungILTestMod.dll"
+}
